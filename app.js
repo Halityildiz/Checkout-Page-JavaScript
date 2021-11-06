@@ -41,7 +41,7 @@ product.addEventListener("click", e=>{
 
 function remover(e) {
   if(e.target.classList.contains("removebtn")){
-    e.target.parentElement.remove();
+    e.target.parentElement.parentElement.remove();
     // e.target.nextElementSibling.innerText = "0";
   }
   money();
