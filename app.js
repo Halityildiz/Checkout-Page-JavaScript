@@ -8,10 +8,10 @@ const taxTotal = document.querySelector(".taxtotal");
 const topTotal = document.querySelector(".toptotal");
 const shipPrice = document.querySelector(".shiptotal");
 const removeBtn = document.getElementsByClassName("removebtn");
-const product = document.querySelector(".image");
-const ekleme = document.querySelector(".product-info");
+const ekleme = document.querySelector(".additem");
+let addiv = document.querySelectorAll('.urun')
 let defPrice = 0;
-
+// console.log(addiv);
 
 for (const button of quantityController) {
   button.addEventListener("click", selector);
@@ -21,31 +21,18 @@ for (const btn of removeBtn) {
   btn.addEventListener("click", remover);
 }
 
-// for (const imge of product) {
-//   imge.addEventListener("click", adder);
-// }
-
-
-// function adder(e) {
-//   const ekleme = e.target.nextElementSibling;
-//   e.target.parentElement.append(ekleme);
-//   money ();
-// }
-
-
-product.addEventListener("click", e=>{ 
-  e.target.parentElement.append(ekleme);
-  money ();
-});
-
-
 function remover(e) {
   if(e.target.classList.contains("removebtn")){
-    e.target.parentElement.parentElement.remove();
+    localStorage.setItem("adding",e.target.parentElement.parentElement);
+    e.target.parentElement.parentElement.remove();    
     // e.target.nextElementSibling.innerText = "0";
   }
   money();
 }
+
+// ekleme.addEventListener("click", (e)=>{
+//   [...addiv].appendChild(localStorage.getItem("adding"))
+// });
 
 
 function selector(e) {
@@ -103,9 +90,18 @@ function money() {
   topTotal.innerHTML = (toplam + (toplam * 18) / 100 + shipPrice2).toFixed(2);
 }
 
-// product.addEventListener("click", e=>{
+
+// function addlama() {
+//   var node = document.getElementById("myList2").lastChild;
+//   document.getElementById("myList1").appendChild(node);
+// }
+
+
+
+
+// ekleme.addEventListener("click", (e)=>{
 //   e.preventDefault(); 
-//   if(!e.target.classList.contains("product-info")){
+//   e.target.parentElement.previousElementSibling classList.contains("product-info")){
 //       e.target.appendChild(NextSiblingElement);
 //   }
 //   money ();

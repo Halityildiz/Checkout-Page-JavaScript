@@ -36,7 +36,8 @@ section{
     flex-direction: row;    
 }
 
-.removebtn{
+.removebtn,
+.additem{
     background-color: #c66;
     color: white;    
     padding: 4px 8px;
@@ -47,7 +48,8 @@ section{
     cursor: pointer;
 }
     
-.removebtn:hover {
+.removebtn:hover,
+.additem:hover {
     background-color: #a44;
 }
 
