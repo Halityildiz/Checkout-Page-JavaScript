@@ -8,10 +8,9 @@ const taxTotal = document.querySelector(".taxtotal");
 const topTotal = document.querySelector(".toptotal");
 const shipPrice = document.querySelector(".shiptotal");
 const removeBtn = document.getElementsByClassName("removebtn");
-const ekleme = document.querySelector(".additem");
-let addiv = document.querySelectorAll('.urun')
+let addBtn = document.querySelectorAll(".add-btn");
+
 let defPrice = 0;
-// console.log(addiv);
 
 for (const button of quantityController) {
   button.addEventListener("click", selector);
@@ -21,42 +20,46 @@ for (const btn of removeBtn) {
   btn.addEventListener("click", remover);
 }
 
-function remover(e) {
-  if(e.target.classList.contains("removebtn")){
-    localStorage.setItem("adding",e.target.parentElement.parentElement);
-    e.target.parentElement.parentElement.remove();    
-    // e.target.nextElementSibling.innerText = "0";
+for (const btn of addBtn) {
+  btn.addEventListener("click", adder);
+}
+function adder(e) {
+  if (e.target.classList.contains("add-btn")) {
+    e.target.parentElement.children[1].style.display = "block";
+    e.target.parentElement.children[2].style.display = "block";
+    e.target.parentElement.children[0].style.display = "none";
+    e.target.parentElement.querySelector(".miktar").innerText = 0;
   }
   money();
 }
 
-// ekleme.addEventListener("click", (e)=>{
-//   [...addiv].appendChild(localStorage.getItem("adding"))
-// });
-
+function remover(e) {
+  if (e.target.classList.contains("removebtn")) {
+    e.target.parentElement.parentElement.children[2].style.display = "none";
+    e.target.parentElement.parentElement.children[1].style.display = "none";
+    e.target.parentElement.parentElement.children[0].style.display = "block";
+    e.target.nextElementSibling.nextElementSibling.innerHTML = "0.00";
+  }
+  money();
+}
 
 function selector(e) {
   let target = e.target;
-  if (
-    target.parentElement.className == "product-button vintage"
-  ) {
+  if (target.parentElement.className == "product-button vintage") {
     defPrice = vintagePrice;
-  } else if (
-    target.parentElement.className == "product-button shoes"
-  ) {
+  } else if (target.parentElement.className == "product-button shoes") {
     defPrice = shoePrice;
-  } else if (
-    target.parentElement.className == "product-button clock"
-  ) {
+  } else if (target.parentElement.className == "product-button clock") {
     defPrice = clockPrice;
   }
-
 
   if (target.classList[0] === "minus") {
     let countEl = target.nextElementSibling;
     if (countEl.innerHTML >= 1) {
       countEl.innerHTML = parseInt(countEl.innerHTML) - 1;
-      let total = target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
+      let total =
+        target.parentElement.nextElementSibling.nextElementSibling
+          .nextElementSibling;
       total.innerText = (
         parseFloat(total.innerHTML) - parseFloat(defPrice)
       ).toFixed(2);
@@ -66,7 +69,9 @@ function selector(e) {
   if (target.classList[0] === "plus") {
     let countEl = target.previousElementSibling;
     countEl.innerHTML = parseInt(countEl.innerHTML) + 1;
-    let total = target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling;
+    let total =
+      target.parentElement.nextElementSibling.nextElementSibling
+        .nextElementSibling;
     total.innerText = (
       parseFloat(total.innerHTML) + parseFloat(defPrice)
     ).toFixed(2);
@@ -89,30 +94,3 @@ function money() {
   taxTotal.innerHTML = ((toplam * 18) / 100).toFixed(2);
   topTotal.innerHTML = (toplam + (toplam * 18) / 100 + shipPrice2).toFixed(2);
 }
-
-
-// function addlama() {
-//   var node = document.getElementById("myList2").lastChild;
-//   document.getElementById("myList1").appendChild(node);
-// }
-
-
-
-
-// ekleme.addEventListener("click", (e)=>{
-//   e.preventDefault(); 
-//   e.target.parentElement.previousElementSibling classList.contains("product-info")){
-//       e.target.appendChild(NextSiblingElement);
-//   }
-//   money ();
-// });
-
-
-
-// for (const img of product) {
-//   img.addEventListener("click", e=>{ 
-//     e.target.parentElement.append(ekleme);
-//     money ();
-//   });
-  
-// }

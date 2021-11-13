@@ -1,245 +1,256 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat',Arial, sans-serif;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  box-sizing: border-box;
 }
 
-section img{
-    height: 170px;
-    width: 150px;
-    border-radius: 10px;
-    margin-right: 20px;
-    cursor: pointer;
+section img {
+  height: 170px;
+  width: 150px;
+  border-radius: 10px;
+  margin-right: 20px;
+  cursor: pointer;
+  opacity: 0.6;
 }
-.image:hover{
-    opacity: 0.6;
+.image:hover {
+  opacity: 1;
 }
 
-main{
-    display: grid;
-    grid-template-columns: 420px 400px;
-    justify-content: center;    
+main {
+  display: grid;
+  grid-template-columns: 420px 400px;
+  justify-content: center;
 }
-section{
-    display: grid;
-    grid-template-rows: 25% 25% 25% 25%;
-    background-color: #EEEEEE;
-    border-radius: 10px;
-    height: 800px;
-    padding: 10px 20px;
+section {
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  height: 800px;
+  padding: 10px 20px;
 }
 .product1,
 .product2,
-.product3{
-    display: flex;
-    flex-direction: row;    
+.product3 {
+  display: flex;
+  flex-direction: row;
 }
 
-.removebtn,
-.additem{
-    background-color: #c66;
-    color: white;    
-    padding: 4px 8px;
-    margin: 5px 0;
-    border-radius: 4px;
-    border: 0;
-    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
-    cursor: pointer;
+.removebtn {
+  background-color: #c66;
+  color: white;
+  padding: 4px 8px;
+  margin: 5px 0;
+  border-radius: 4px;
+  border: 0;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  cursor: pointer;
 }
-    
+.add-btn {
+  background-color: #c66;
+  color: white;
+
+  border-radius: 4px;
+  border: 0;
+  font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+}
+
 .removebtn:hover,
-.additem:hover {
-    background-color: #a44;
+.add-btn:hover {
+  background-color: #a44;
 }
 
-
-.product-button{
-    border-radius: 5px;
-    border: 1px solid rgb(136, 136, 136);
-    display: flex;
-    justify-content: space-around;
-    width: 150px;
-    margin-top: 25px;
+.product-button {
+  border-radius: 5px;
+  border: 1px solid rgb(136, 136, 136);
+  display: flex;
+  justify-content: space-around;
+  width: 150px;
+  margin-top: 25px;
 }
 .bagfiyat,
 .shoefiyat,
-.saatfiyat{
-    color: #f2994a;
-    font-size: 16px;
-    font-weight: 600;
+.saatfiyat {
+  color: #f2994a;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .product-info p {
-    font-size: 12px;
-    color: #4E5150;
-    margin: 5px 0;
+  font-size: 12px;
+  color: #4e5150;
+  margin: 5px 0;
 }
 .product-info h2 {
-    font-size: 16px;
-    color: #4E5150;
-    margin: 5px 0;
+  font-size: 16px;
+  color: #4e5150;
+  margin: 5px 0;
 }
 
 .product-button p {
-    line-height: 24px;
-    font-size: 14px;
-    font-weight: 700;
-    opacity: 1;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  opacity: 1;
 }
 .product-button button {
-    margin: 5px 0;
-    border: 0;
-    border-radius: 5px;
-    padding: 5px;
-    text-align: center;
-    background-color: #b8b1b1;
-    opacity: 0.6;
-    cursor: pointer;
+  margin: 5px 0;
+  border: 0;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background-color: #b8b1b1;
+  opacity: 0.6;
+  cursor: pointer;
 }
-.product-button button:hover{
-    opacity: 1;
+.product-button button:hover {
+  opacity: 1;
 }
-.total-price{
-    margin-top: 40px;
+.total-price {
+  margin-top: 40px;
 }
-.prototals{
-    font-size: 16px;
-    display: inline-block;
+.prototals {
+  font-size: 16px;
+  display: inline-block;
 }
 .prototals:before {
-    content: "Product Total: $";
+  content: "Product Total: $";
 }
 
-.total-price div{
-    display: inline-block;    
+.total-price div {
+  display: inline-block;
 }
 
-.total-price p{    
-    font-family: Mon, Arial, Helvetica, sans-serif;
-    display: inline-block;
-    width: 78%;
-    margin-bottom: 10px;
-    letter-spacing: 1px;  
+.total-price p {
+  font-family: Mon, Arial, Helvetica, sans-serif;
+  display: inline-block;
+  width: 78%;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 .total-price div:before {
-    content: "$";
+  content: "$";
 }
 
-header{
-    font-weight: bold;
-    text-align: center;
-    margin: 16px 0 32px;
+header {
+  font-weight: bold;
+  text-align: center;
+  margin: 16px 0 32px;
 }
 
-footer button{
-    display: block;
-    margin: 30px auto 0;    
-    text-align: center;
-    background-color: #f2994a;    
-    height: 43px;
-    width: 75px;
-    border-radius: 10px;
-    font-weight: 600;    
-    color:#FFFFFF;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 14px;    
-} 
-form {    
-    position: relative;
-    width: 80%;
-    display: block;
+footer button {
+  display: block;
+  margin: 30px auto 0;
+  text-align: center;
+  background-color: #f2994a;
+  height: 43px;
+  width: 75px;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
-.reminder input{
-    display: inline-block;
-    width: 16px;
-    height: 16px;
-    margin-top: 15px;    
+form {
+  position: relative;
+  width: 80%;
+  display: block;
 }
-.reminder label{
-    display: inline-block;
-    font-size: 12px;
+.reminder input {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin-top: 15px;
 }
-form h1{
-    font-size: 18px;
-    font-weight: 700;
-    color: #333333;
+.reminder label {
+  display: inline-block;
+  font-size: 12px;
 }
-form select{
-    width: 110px;    
-    border-radius: 5px;    
-    height: 32px;
-    padding-left: 25px;
-    border: 1px solid #828282;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;    
+form h1 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #333333;
 }
-form label{
-    font-size: 12px;
-    color: #4f4f4f;
-    margin: 8px auto;
+form select {
+  width: 110px;
+  border-radius: 5px;
+  height: 32px;
+  padding-left: 25px;
+  border: 1px solid #828282;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
 }
-form input{
-    border-radius: 5px;
-    width: 372px;
-    height: 32px;
-    padding-left: 35px;
-    border: 1px solid #828282;
-    font-size: 14px;
-    font-family: Arial, Helvetica, sans-serif;
+form label {
+  font-size: 12px;
+  color: #4f4f4f;
+  margin: 8px auto;
+}
+form input {
+  border-radius: 5px;
+  width: 372px;
+  height: 32px;
+  padding-left: 35px;
+  border: 1px solid #828282;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-form i{
-    font-size: 16px;
-    color: #828282;
-    font-weight: 900;
-    position: relative;
-    font-size: 16px;
-    top: -30px;   
-    left:2%;   
+form i {
+  font-size: 16px;
+  color: #828282;
+  font-weight: 900;
+  position: relative;
+  font-size: 16px;
+  top: -30px;
+  left: 2%;
 }
 
 .user1,
-.user2{
-    display: inline-block;
+.user2 {
+  display: inline-block;
 }
-.user1{
-    margin-right: 10px;    
+.user1 {
+  margin-right: 10px;
 }
 
-#user-postal-code{
-    width: 200px;
+#user-postal-code {
+  width: 200px;
 }
 .user1 i,
-.user2 i{
-    position: relative;
-    top: 56px;
-    left:5px;
+.user2 i {
+  position: relative;
+  top: 56px;
+  left: 5px;
 }
-.user input{
-    margin: 5px 0px;
+.user input {
+  margin: 5px 0px;
 }
-.shipping h1{
-    margin: 30px 0px 10px;    
+.shipping h1 {
+  margin: 30px 0px 10px;
 }
 
 @media screen and (max-width: 760px) {
-    main, footer{
-        display: flex;
-        flex-wrap: wrap-reverse;
-        justify-content: center;
-    }
-    form input{
-        width: 300px;       
-    }
-    form i{
-        position: relative;     
-        top: 0px;   
-        left: -295px;
-    }
-    section{
-        margin-left:-100px;
-        margin-bottom: 30px;
-    }
+  main,
+  footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+  }
+  form input {
+    width: 300px;
+  }
+  form i {
+    position: relative;
+    top: 0px;
+    left: -295px;
+  }
+  section {
+    margin-left: -100px;
+    margin-bottom: 30px;
+  }
 }
