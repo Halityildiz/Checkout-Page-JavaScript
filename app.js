@@ -1,4 +1,4 @@
-let quantityController = document.querySelectorAll(".product-button");
+let quantityController = document.getElementsByClassName("product-button");
 const vintagePrice = document.querySelector(".bagfiyat").innerHTML;
 const shoePrice = document.querySelector(".shoefiyat").innerHTML;
 const clockPrice = document.querySelector(".saatfiyat").innerHTML;
@@ -12,9 +12,10 @@ let addBtn = document.querySelectorAll(".add-btn");
 
 let defPrice = 0;
 
-for (const button of quantityController) {
-  button.addEventListener("click", selector);
+for (const but of quantityController) {
+  but.addEventListener("click", selector);
 }
+// console.log();
 
 for (const btn of removeBtn) {
   btn.addEventListener("click", remover);
