@@ -34,14 +34,18 @@ function adder(e) {
 }
 
 function remover(e) {
-  alert("Are you sure?");
   if (e.target.classList.contains("removebtn")) {
-    e.target.parentElement.parentElement.children[2].style.display = "none";
-    e.target.parentElement.parentElement.children[1].style.display = "none";
-    e.target.parentElement.parentElement.children[0].style.display = "block";
-    e.target.nextElementSibling.nextElementSibling.innerHTML = "0.00";
+    if (confirm("Do you want to save changes?") == true) {
+      e.target.parentElement.parentElement.children[2].style.display = "none";
+      e.target.parentElement.parentElement.children[1].style.display = "none";
+      e.target.parentElement.parentElement.children[0].style.display = "block";
+      e.target.nextElementSibling.nextElementSibling.innerHTML = "0.00";
+    }
+    money();
+    // } else {
+    //   userPreference = "Save Canceled!";
+    // }
   }
-  money();
 }
 
 function selector(e) {
@@ -66,16 +70,20 @@ function selector(e) {
       ).toFixed(2);
     }
     if (countEl.innerHTML == 0) {
-      alert("Are you sure?");
-
-      target.parentElement.parentElement.parentElement.children[2].style.display =
-        "none";
-      target.parentElement.parentElement.parentElement.children[1].style.display =
-        "none";
-      target.parentElement.parentElement.parentElement.children[0].style.display =
-        "block";
-      target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML =
-        "0.00";
+      if (confirm("Do you want to remove product?") == true) {
+        target.parentElement.parentElement.parentElement.children[2].style.display =
+          "none";
+        target.parentElement.parentElement.parentElement.children[1].style.display =
+          "none";
+        target.parentElement.parentElement.parentElement.children[0].style.display =
+          "block";
+        target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML =
+          "0.00";
+      } else {
+        countEl.innerHTML = 1;
+        target.parentElement.nextElementSibling.nextElementSibling.nextElementSibling.innerHTML =
+          defPrice;
+      }
     }
   }
 
